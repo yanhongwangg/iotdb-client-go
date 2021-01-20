@@ -557,5 +557,8 @@ func NewIoTDBRpcDataSet(sql string, columnNameList []string, columnTypes []strin
 			}
 		}
 	}
+	if queryDataSet == nil || len(queryDataSet.Time) == 0 {
+		ds.emptyResultSet = true
+	}
 	return ds
 }
